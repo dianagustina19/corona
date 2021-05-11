@@ -39,20 +39,20 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="{{asset('asset/img/logo-small.png')}}">
+            <img src="{{asset('asset/img/logo.jpeg')}}">
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Corona Dashboard
+        <a href="" class="simple-text logo-normal">
+          CORONA
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -72,7 +72,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Corona Result Indonesia</a>
+            <a class="navbar-brand" href="javascript:;">Corona Indonesia</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -101,9 +101,7 @@ Coded by www.creative-tim.com
               <div class="card-body ">
                 <div class="row">
                   <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-globe text-warning"></i>
-                    </div>
+                  
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
@@ -135,9 +133,6 @@ Coded by www.creative-tim.com
               <div class="card-body ">
                 <div class="row">
                   <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
-                    </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
@@ -169,9 +164,6 @@ Coded by www.creative-tim.com
               <div class="card-body ">
                 <div class="row">
                   <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-vector text-danger"></i>
-                    </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
@@ -203,7 +195,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <h5 class="card-title">Summary Corona Seluruh Indonesia</h5>
+                <h5 class="card-title">Rangkuman Data Corona Seluruh Indonesia</h5>
                 <p class="card-category">24 Hours performance</p>
               </div>
               <div class="card-body ">
@@ -241,24 +233,29 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <h5 class="card-title">Summary Corona di Indonesia</h5>
+                <h5 class="card-title">Perbandingan Corona di Indonesia Dan india</h5>
                 <p class="card-category"></p>
               </div>
               <div class="card-body ">
-               <table class="table table-bordered" id="myTable">
-                  <thead>
-                    <tr>
-                      <th>No.</th>
-                      <th>Provinsi</th>
-                      <th>Positif</th>
-                      <th>Sembuh</th>
-                      <th>Meninggal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                 
-                  </tbody>
-               </table>
+               <div class="row">
+                 <div class="col-md-6">
+                    <h5>Indonesia</h5>
+                      Kasus Positif = {{$indonesia['positif']}} <br>
+                      Kasus Sembuh = {{$indonesia['sembuh']}} <br>
+                      Kasus Meninggal = {{$indonesia['meninggal']}} <br>
+                 </div>
+                 <div class="col-md-6">
+                    <h5>India</h5>
+                      Kasus Positif = {{$india['Confirmed']}} <br>
+                      Kasus Sembuh = {{$india['Deaths']}} <br>
+                      Kasus Meninggal = {{$india['Recovered']}} <br>
+                 </div>
+               </div><br>
+
+               <div class="col-md-12">
+                 1. Kasus Positif di India lebih banyak {{$hasil}} atau {{ Str::limit($persen, 6) }}% kasus dibandingkan dengan indonesia <br>
+               </div>
+
               </div>
               <div class="card-footer ">
                 <hr>
@@ -306,14 +303,11 @@ Coded by www.creative-tim.com
   <script src="{{asset('asset/demo/demo.js')}}"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
   <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
+    //datatable
+      $(document).ready( function () {
+      $('#myTable').DataTable();
     });
 
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
   </script>
 </body>
 

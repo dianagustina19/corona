@@ -10,20 +10,44 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $keyword        = $request->input('keyword');
-        $state          = $request->input('state');
-        $dari_tanggal   = $request->input('dari_tanggal');
-        $sampai_tanggal = $request->input('sampai_tanggal');
-
         $client = new Client();
         $response = $client->request('GET', 'https://api.kawalcorona.com/indonesia/provinsi');
 
         $responseJSON = json_decode($response->getBody(), true);
-        $all=$responseJSON;
+
         $DKI=$responseJSON[0]['attributes'];
         $TENGAH=$responseJSON[2]['attributes'];
         $TIMUR=$responseJSON[1]['attributes'];
 
-        return view('dashboard', [ 'all'=>$responseJSON,'dki' => $DKI,'tengah'=> $TENGAH, 'timur'=>$TIMUR]);
+        $responsee = $client->request('GET', 'https://api.kawalcorona.com/indonesia');
+
+        $indonesiaa = json_decode($responsee->getBody(), true);
+        $indonesia = $indonesiaa[0];
+        $positifindo = $indonesiaa[0]['positif'];
+        $positifindo = str_replace(",", "", $positifindo);
+
+        $responseee = $client->request('GET', 'https://api.kawalcorona.com/');
+
+        $result = json_decode($responseee->getBody(), true);
+
+        $india=$result[1]['attributes'];
+        $positifindia = $result[1]['attributes']['Confirmed'];
+        $sembuhindia = $result[1]['attributes']['Recovered'];
+
+        $hasil = $positifindia - $positifindo;
+        $persen = $hasil / $positifindo;
+        $persen = $persen * 100;
+
+        return view('dashboard', 
+        [ 
+            'all'=>$responseJSON, 
+            'dki' => $DKI, 
+            'tengah'=> $TENGAH, 
+            'timur'=>$TIMUR, 
+            'india'=>$india, 
+            'indonesia'=>$indonesia,
+            'hasil' =>$hasil,
+            'persen' =>$persen
+            ]);
     }
 }

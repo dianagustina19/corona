@@ -247,8 +247,8 @@ Coded by www.creative-tim.com
                  <div class="col-md-6">
                     <h5>India</h5>
                       Kasus Positif = {{$india['Confirmed']}} <br>
-                      Kasus Sembuh = {{$india['Deaths']}} <br>
-                      Kasus Meninggal = {{$india['Recovered']}} <br>
+                      Kasus Sembuh =  {{$india['Recovered']}}<br>
+                      Kasus Meninggal = {{$india['Deaths']}} <br>
                  </div>
                </div><br>
 

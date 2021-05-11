@@ -104,11 +104,11 @@
                   Kasus Positif : {{$dki['Kasus_Posi']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                  <i class="fa fa-check-square"></i>
                   Kasus Sembuh : {{$dki['Kasus_Semb']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                  <i class="fa fa-times"></i>
                   Kasus Meninggal : {{$dki['Kasus_Meni']}}
                 </div>
               </div>
@@ -135,11 +135,11 @@
                   Kasus Positif : {{$timur['Kasus_Posi']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                <i class="fa fa-check-square"></i>
                   Kasus Sembuh : {{$timur['Kasus_Semb']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                  <i class="fa fa-times"></i>
                   Kasus Meninggal : {{$timur['Kasus_Meni']}}
                 </div>
               </div>
@@ -166,11 +166,11 @@
                   Kasus Positif : {{$tengah['Kasus_Posi']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                <i class="fa fa-check-square"></i>
                   Kasus Sembuh : {{$tengah['Kasus_Semb']}}
                 </div>
                 <div class="stats">
-                  <i class="fa fa-plus"></i>
+                  <i class="fa fa-times"></i>
                   Kasus Meninggal : {{$tengah['Kasus_Meni']}}
                 </div>
               </div>
